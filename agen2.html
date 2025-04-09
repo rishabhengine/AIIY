@@ -1,13 +1,13 @@
 <template>
     <div class="slds-page-header slds-page-header_record-home" role="banner">
-      <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center" role="group" aria-labelledby="contact-name">
-          <div class="slds-grid slds-grid_vertical-align-center" role="group" aria-labelledby="contact-name">
+      <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center" role="group" aria-labelledby="contact-section-label">
+          <div class="slds-grid slds-grid_vertical-align-center" role="group">
               <div class="slds-m-right_small" role="presentation">
                   <lightning-icon icon-name="standard:contact" size="large" alternative-text="Contact Icon"></lightning-icon>
               </div>
               <div role="group">
                   <p class="slds-text-title_caps" id="contact-section-label">Contact</p>
-                  <h1 class="slds-text-heading_medium" id="contact-name" title="name" aria-labelledby="contact-section-label">Rishab Bhardwaj</h1>
+                  <h1 class="slds-text-heading_medium" id="contact-name" title="name">Rishab Bhardwaj</h1>
               </div>
           </div>
           <div class="slds-grid slds-grid_align-end slds-m-left_auto" role="group">
@@ -46,10 +46,10 @@
     <lightning-layout>
       <lightning-layout-item size="8">
         <lightning-tabset variant="scoped" aria-label="Contact Record Tabs">
-            <lightning-tab label="Related" role="tab">
+            <lightning-tab label="Related">
                 <div role="tabpanel">
                     <lightning-card>
-                        <lightning-layout multiple-rows="true" class="slds-p-around_medium" role="alert">
+                        <lightning-layout multiple-rows="true" class="slds-p-around_medium">
                             <lightning-layout-item flexibility="no-grow" class="slds-m-right_small slds-align-top">
                                 <lightning-icon icon-name="utility:warning" alternative-text="Alert" size="small"
                                     class="slds-icon-text-warning">
@@ -129,67 +129,4 @@
                             </lightning-layout-item>
                         </lightning-layout>
 
-                        <div class="slds-box slds-box_x-small slds-p-around_medium slds-text-align_center slds-border_dashed">
-                            <lightning-button variant="base" label="Upload Files" icon-name="utility:upload" icon-position="left" title="Upload Files"></lightning-button>
-                            <p class="slds-p-top_small">Or drop files</p>
-                        </div>
-                    </lightning-card>
-                </div>
-            </lightning-tab>
-          
-            <lightning-tab label="Details" role="tab">
-                <div role="tabpanel">
-                    <p>Contents for Details Tab</p> 
-                </div>
-            </lightning-tab>
-        </lightning-tabset>
-      </lightning-layout-item>
-
-      <lightning-layout-item size="4">
-        <lightning-tabset variant="scoped" aria-label="Additional Contact Information">
-            <lightning-tab label="Activity">
-                <div class="slds-p-around_medium">
-                    <lightning-layout horizontal-align="space-around">
-                        <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:task" variant="border-filled" title="Task"></lightning-button-icon>
-                        </lightning-layout-item>
-                        <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:event" variant="border-filled" title="Event"></lightning-button-icon>
-                        </lightning-layout-item>
-                        <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:log_a_call" variant="border-filled" title="Log a Call"></lightning-button-icon>
-                        </lightning-layout-item>
-                        <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:email" variant="border-filled" title="Email"></lightning-button-icon>
-                        </lightning-layout-item>
-                    </lightning-layout>
-
-                    <div class="slds-m-top_medium">
-                        Filters: All time • All activities • All types
-                        <lightning-button-icon icon-name="utility:settings" variant="border-filled" class="slds-float_right" title="Settings"></lightning-button-icon>
-                    </div>
-
-                    <div class="slds-m-top_small">
-                        <a href="#">Refresh</a> •
-                        <a href="#">Expand All</a> •
-                        <a href="#">View All</a>
-                    </div>
-
-                    <lightning-accordion class="slds-m-top_medium">
-                        <lightning-accordion-section label="Upcoming & Overdue">
-                            <p>No activities to show.</p>
-                            <p>Get started by sending an email, scheduling a task, and more.</p>
-                        </lightning-accordion-section>
-                    </lightning-accordion>
-
-                    <p class="slds-m-top_medium">No past activity. Past meetings and tasks marked as done show up here.</p>
-                </div>
-            </lightning-tab>
-
-            <lightning-tab label="Chatter">
-                <p>Chatter content goes here</p>
-            </lightning-tab>
-        </lightning-tabset>
-      </lightning-layout-item>
-  </lightning-layout>
-</template>
+                        <div class="slds-box slds-box_x-small slds-p-around_medium slds-text-align_center s
