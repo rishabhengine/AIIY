@@ -1,22 +1,22 @@
 <template>
     <div class="slds-page-header slds-page-header_record-home" role="banner">
-      <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center" role="group">
-          <div class="slds-grid slds-grid_vertical-align-center" role="group">
+      <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center" role="group" aria-labelledby="contact-name">
+          <div class="slds-grid slds-grid_vertical-align-center" role="group" aria-labelledby="contact-name">
               <div class="slds-m-right_small" role="presentation">
                   <lightning-icon icon-name="standard:contact" size="large" alternative-text="Contact Icon"></lightning-icon>
               </div>
               <div role="group">
-                  <p class="slds-text-title_caps">Contact</p>
-                  <h1 class="slds-text-heading_medium" id="contact-name" title="name">Rishab Bhardwaj</h1>
+                  <p class="slds-text-title_caps" id="contact-section-label">Contact</p>
+                  <h1 class="slds-text-heading_medium" id="contact-name" title="name" aria-labelledby="contact-section-label">Rishab Bhardwaj</h1>
               </div>
           </div>
           <div class="slds-grid slds-grid_align-end slds-m-left_auto" role="group">
-              <lightning-button-icon icon-name="utility:hierarchy" alternative-text="View hierarchy" variant="border-filled" role="button"></lightning-button-icon>
-              <lightning-button label="Follow" variant="neutral" class="slds-m-left_x-small" role="button"></lightning-button>
-              <lightning-button label="Edit" variant="brand" class="slds-m-left_x-small" role="button"></lightning-button>
-              <lightning-button label="New Case" variant="neutral" class="slds-m-left_x-small" role="button"></lightning-button>
-              <lightning-button label="New Note" variant="neutral" class="slds-m-left_x-small" role="button"></lightning-button>
-              <lightning-button-icon icon-name="utility:down" alternative-text="More Actions Menu" class="slds-m-left_x-small" variant="border-filled" role="button"></lightning-button-icon>
+              <lightning-button-icon icon-name="utility:hierarchy" alternative-text="View hierarchy" variant="border-filled" title="View hierarchy" role="button"></lightning-button-icon>
+              <lightning-button label="Follow" variant="neutral" class="slds-m-left_x-small" title="Follow" role="button"></lightning-button>
+              <lightning-button label="Edit" variant="brand" class="slds-m-left_x-small" title="Edit" role="button"></lightning-button>
+              <lightning-button label="New Case" variant="neutral" class="slds-m-left_x-small" title="New Case" role="button"></lightning-button>
+              <lightning-button label="New Note" variant="neutral" class="slds-m-left_x-small" title="New Note" role="button"></lightning-button>
+              <lightning-button-icon icon-name="utility:down" alternative-text="More Actions Menu" class="slds-m-left_x-small" variant="border-filled" title="More Actions" role="button"></lightning-button-icon>
           </div>
       </div>
       <br>
@@ -46,8 +46,8 @@
     <lightning-layout>
       <lightning-layout-item size="8">
         <lightning-tabset variant="scoped" aria-label="Contact Record Tabs">
-            <lightning-tab label="Related" aria-labelledby="related-tab" role="tab">
-                <div role="tabpanel" aria-labelledby="related-tab">
+            <lightning-tab label="Related" role="tab">
+                <div role="tabpanel">
                     <lightning-card>
                         <lightning-layout multiple-rows="true" class="slds-p-around_medium" role="alert">
                             <lightning-layout-item flexibility="no-grow" class="slds-m-right_small slds-align-top">
@@ -59,7 +59,7 @@
                                 <h2 class="slds-text-heading_small slds-m-bottom_xx-small">
                                     <strong>We found no potential duplicates of this Contact.</strong>
                                 </h2>
-                                <p>No duplicate les are activa.hjello world and write it downn Activate duplicate rules to identify potential duplicate records.</p>
+                                <p>No duplicate records are active. Activate duplicate rules to identify potential duplicate records.</p>
                             </lightning-layout-item>
                         </lightning-layout>
                     </lightning-card>
@@ -73,7 +73,7 @@
                                         <a href="#"><span class="slds-text-heading_small slds-m-left_x-small"><strong>Opportunities (0)</strong></span></a>
                                     </lightning-layout-item>
                                     <lightning-layout-item class="slds-align-top slds-col_bump-left"> 
-                                        <lightning-button label="New"></lightning-button>
+                                        <lightning-button label="New" title="New Opportunity"></lightning-button>
                                     </lightning-layout-item>
                                 </lightning-layout>
                             </lightning-layout-item>
@@ -89,7 +89,7 @@
                                         <a href="#"><span class="slds-text-heading_small slds-m-left_x-small"><strong>Cases (0)</strong></span></a>
                                     </lightning-layout-item>
                                     <lightning-layout-item class="slds-align-top slds-col_bump-left"> 
-                                        <lightning-button label="New"></lightning-button>
+                                        <lightning-button label="New" title="New Case"></lightning-button>
                                     </lightning-layout-item>
                                 </lightning-layout>
                             </lightning-layout-item>
@@ -105,7 +105,7 @@
                                         <a href="#"><span class="slds-text-heading_small slds-m-left_x-small"><strong>Campaign History (0)</strong></span></a>
                                     </lightning-layout-item>
                                     <lightning-layout-item class="slds-align-top slds-col_bump-left"> 
-                                        <lightning-button label="Add to Campaign"></lightning-button>
+                                        <lightning-button label="Add to Campaign" title="Add to Campaign"></lightning-button>
                                     </lightning-layout-item>
                                 </lightning-layout>
                             </lightning-layout-item>
@@ -123,53 +123,53 @@
                                         </lightning-layout>
                                     </lightning-layout-item>
                                     <lightning-layout-item class="slds-align-top slds-col_bump-left">
-                                        <lightning-button label="Upload Files"></lightning-button>
+                                        <lightning-button label="Upload Files" title="Upload Files"></lightning-button>
                                     </lightning-layout-item>
                                 </lightning-layout>
                             </lightning-layout-item>
                         </lightning-layout>
 
                         <div class="slds-box slds-box_x-small slds-p-around_medium slds-text-align_center slds-border_dashed">
-                            <lightning-button variant="base" label="Upload Files" icon-name="utility:upload" icon-position="left"></lightning-button>
+                            <lightning-button variant="base" label="Upload Files" icon-name="utility:upload" icon-position="left" title="Upload Files"></lightning-button>
                             <p class="slds-p-top_small">Or drop files</p>
                         </div>
                     </lightning-card>
                 </div>
             </lightning-tab>
           
-            <lightning-tab label="Details" aria-labelledby="details-tab" role="tab">
-                <div role="tabpanel" aria-labelledby="details-tab">
-                    <p>Contensst for Detaidddls Tab</p> 
+            <lightning-tab label="Details" role="tab">
+                <div role="tabpanel">
+                    <p>Contents for Details Tab</p> 
                 </div>
             </lightning-tab>
         </lightning-tabset>
       </lightning-layout-item>
 
       <lightning-layout-item size="4">
-        <lightning-tabset variant="scoped">
+        <lightning-tabset variant="scoped" aria-label="Additional Contact Information">
             <lightning-tab label="Activity">
                 <div class="slds-p-around_medium">
                     <lightning-layout horizontal-align="space-around">
                         <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:task" variant="border-filled"></lightning-button-icon>
+                            <lightning-button-icon icon-name="standard:task" variant="border-filled" title="Task"></lightning-button-icon>
                         </lightning-layout-item>
                         <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:event" variant="border-filled"></lightning-button-icon>
+                            <lightning-button-icon icon-name="standard:event" variant="border-filled" title="Event"></lightning-button-icon>
                         </lightning-layout-item>
                         <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:log_a_call" variant="border-filled"></lightning-button-icon>
+                            <lightning-button-icon icon-name="standard:log_a_call" variant="border-filled" title="Log a Call"></lightning-button-icon>
                         </lightning-layout-item>
                         <lightning-layout-item>
-                            <lightning-button-icon icon-name="standard:email" variant="border-filled"></lightning-button-icon>
+                            <lightning-button-icon icon-name="standard:email" variant="border-filled" title="Email"></lightning-button-icon>
                         </lightning-layout-item>
                     </lightning-layout>
 
-                    <div class="slds-m-top_medium ">
-                        Filtessss: All time • All activities • All types
-                        <lightning-button-icon icon-name="utility:settings" variant="border-filled" class="slds-float_right"></lightning-button-icon>
+                    <div class="slds-m-top_medium">
+                        Filters: All time • All activities • All types
+                        <lightning-button-icon icon-name="utility:settings" variant="border-filled" class="slds-float_right" title="Settings"></lightning-button-icon>
                     </div>
 
-                    <div class="slds-m-top_small ">
+                    <div class="slds-m-top_small">
                         <a href="#">Refresh</a> •
                         <a href="#">Expand All</a> •
                         <a href="#">View All</a>
