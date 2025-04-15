@@ -1,0 +1,105 @@
+<!--
+  ~ Copyright 2023 salesforce.com, inc.
+  ~ All Rights Reserved
+  ~ Company Confidential
+  -->
+<template>
+    <div class="slds-grid slds-grid_vertical slds-grid_align-center slds-p-around_small slds-wrap full-height">
+        <div class="slds-col slds-size_12-of-12 slds-p-around_small slds-is-relative">
+            <p><b><lightning-formatted-text value={DefineCourseDetailHeaderLabel}></lightning-formatted-text></b></p>
+            <p><lightning-formatted-text value={DefineCourseDetailContentLabel} ></lightning-formatted-text></p>
+        </div>
+        <div class="slds-col slds-size_12-of-12 slds-p-around_small slds-is-relative">
+            <lightning-accordion allow-multiple-sections-open active-section-name={activeSections} class="learning-course-details-accordion">
+                <lightning-accordion-section name="CourseDetailsSection" label={courseDetailsSectionLabel}>
+                    <div class="slds-p-around_small slds-wrap full-height">
+                        <lightning-record-edit-form object-api-name={learningObjectApiName} onload={handleLoadDataLearning}>
+                            <lightning-messages> </lightning-messages>
+                            <div class="slds-grid slds-wrap">
+                                <template for:each = {allLearningFields} for:item = "field">
+                                    <div class="slds-col slds-size_1-of-2" key={field.apiName}>
+                                        <lightning-input-field field-name={field.apiName}
+                                                               data-id = {field.apiName}
+                                                               value={field.value}
+                                                               onchange={handleFieldValueChange}
+                                                               disabled={field.isDisabled}
+                                                               required={field.required}
+                                                               variant="label-stacked"
+                                      ></lightning-input-field>
+                                    </div>
+                                </template>
+                            </div>
+                        </lightning-record-edit-form>
+                        <div if:true={showSpinnerLearning}>
+                            <lightning-spinner alternative-text={LoadingLabel} variant="brand">
+                            </lightning-spinner>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+                <lightning-accordion-section if:true={showAdditionalCourseDetailsSection} name="AdditionalCourseDetailsSection" label={AdditionalCourseDetailsSectionLabel}>
+                    <div class="slds-p-around_small slds-wrap full-height">
+                        <lightning-record-edit-form object-api-name={learningCourseObjectApiName} onload={handleLoadDataLearningCourse}>
+                            <lightning-messages> </lightning-messages>
+                            <div class="slds-grid slds-wrap">
+                                <template for:each = {allLearningCourseFields} for:item = "field">
+                                    <div class="slds-col slds-size_1-of-2" key={field.apiName}>
+                                        <lightning-input-field field-name={field.apiName}
+                                                               data-id = {field.apiName}
+                                                               value={field.value}
+                                                               onchange={handleFieldValueChange}
+                                                               disabled={field.isDisabled}
+                                                               required={field.required}
+                                                               variant="label-stacked"
+                                        ></lightning-input-field>
+                                    </div>
+                                </template>
+                            </div>
+                        </lightning-record-edit-form>
+                        <div if:true={showSpinnerLearningCourse}>
+                            <lightning-spinner alternative-text={LoadingLabel} variant="brand">
+                            </lightning-spinner>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+                <template lwc:if={showCustomCourseDetailsSection}>
+                    <lightning-accordion-section name="CustomCourseDetailsSection" label={CustomCourseDetailsSectionLabel}>
+                        <div class="slds-p-around_small slds-wrap full-height">
+                            <lightning-record-edit-form object-api-name={learningCourseObjectApiName} onload={handleLoadDataLearningCourse}>
+                                <lightning-messages> </lightning-messages>
+                                <div class="slds-grid slds-wrap">
+                                    <template for:each = {customLearningCourseFields} for:item = "field">
+                                        <div class="slds-col slds-size_1-of-2" key={field.apiName}>
+                                            <lightning-input-field field-name={field.apiName}
+                                                                   data-id = {field.apiName}
+                                                                   value={field.value}
+                                                                   onchange={handleFieldValueChange}
+                                                                   disabled={field.isDisabled}
+                                                                   required={field.required}
+                                                                   variant="label-stacked"
+                                            ></lightning-input-field>
+                                        </div>
+                                    </template>
+                                </div>
+                            </lightning-record-edit-form>
+                            <template lwc:if={showSpinnerLearningCourse}>
+                                <div>
+                                    <lightning-spinner alternative-text={LoadingLabel} variant="brand"></lightning-spinner>
+                                </div>
+                            </template>
+                        </div>
+                    </lightning-accordion-section>
+                </template>
+                <lightning-accordion-section name="DescriptionSection" label={DescriptionSectionLabel}>
+                    <div class="slds-wrap full-height">
+                        <div class="slds-col slds-p-around_small slds-is-relative">
+                            <lightning-input-rich-text value={learningDescription}
+                                                       onchange={handleDescriptionChange}
+                                                       placeholder={DescriptionPlaceholder}
+                            ></lightning-input-rich-text>
+                        </div>
+                    </div>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </div>
+</template>
