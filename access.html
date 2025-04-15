@@ -13,7 +13,7 @@
                             <div class="slds-grid slds-wrap">
                                 <template for:each = {allLearningFields} for:item = "field">
                                     <div class="slds-col slds-size_1-of-2" key={field.apiName}>
-                                        <lightning-input-field aria-label="Enter course detail" field-name={field.apiName}
+                                        <lightning-input-field aria-label="Enter detailed information for the new course" field-name={field.apiName}
                                                                data-id = {field.apiName}
                                                                value={field.value}
                                                                onchange={handleFieldValueChange}
@@ -38,7 +38,7 @@
                             <div class="slds-grid slds-wrap">
                                 <template for:each = {allLearningCourseFields} for:item = "field">
                                     <div class="slds-col slds-size_1-of-2" key={field.apiName}>
-                                        <lightning-input-field aria-label="Enter course detail" field-name={field.apiName}
+                                        <lightning-input-field aria-label="Enter detailed information for the new course" field-name={field.apiName}
                                                                data-id = {field.apiName}
                                                                value={field.value}
                                                                onchange={handleFieldValueChange}
@@ -64,7 +64,7 @@
                                 <div class="slds-grid slds-wrap">
                                     <template for:each = {customLearningCourseFields} for:item = "field">
                                         <div class="slds-col slds-size_1-of-2" key={field.apiName}>
-                                            <lightning-input-field aria-label="Enter course detail" field-name={field.apiName}
+                                            <lightning-input-field aria-label="Enter detailed information for the new course" field-name={field.apiName}
                                                                    data-id = {field.apiName}
                                                                    value={field.value}
                                                                    onchange={handleFieldValueChange}
@@ -87,7 +87,7 @@
                 <lightning-accordion-section name="DescriptionSection" label={DescriptionSectionLabel}>
                     <div class="slds-wrap full-height">
                         <div class="slds-col slds-p-around_small slds-is-relative">
-                            <lightning-input-rich-text aria-label="Enter course description" value={learningDescription}
+                            <lightning-input-rich-text aria-label="Enter a detailed description for the new course" value={learningDescription}
                                                        onchange={handleDescriptionChange}
                                                        placeholder={DescriptionPlaceholder}
                             ></lightning-input-rich-text>
